@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h2 style="color: #666666;margin-left: 20px "><%= @course.name %></h2>
+<p style="margin-left: 40px"><%= @course.description %></p>
+<div class="container">
+  <div class="row justify-content-start">
+  <div class="col-2">
+  <%= button_to "Edit this course", edit_teach_course_path(@course),method: :get, class:"btn btn-warning" %></div>
+  <div class="col-2"><%= button_to "Delete this course", [:teach, @course], method: :delete, class:"btn btn-danger" %>
+</div>
+  </div>
+  </div>
+<p><%=@course.students.count %> students enrolled in this course</p>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @assignment %>
+
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-2">
+      <%= button_to "Edit this assignment", edit_teach_course_assignment_path(@course,@assignment), method: :get, class:"btn btn-warning" %> </div>
+    <div class="col-2"><%= button_to "Delete this assignment", [:teach, @course,@assignment], method: :delete, class:"btn btn-danger" %></div>
+    <div class="col-2"><%= button_to "list of submissions for this assignment",teach_course_assignment_submissions_path(@course,@assignment), method: :get, class:"btn btn-primary" %></div>
+  </div>
+</div>
+<br>
+<%= button_to "Back to assignments", teach_course_assignments_path, method: :get, class:"btn btn-info" %>

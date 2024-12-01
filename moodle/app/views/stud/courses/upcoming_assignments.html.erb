@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Your Upcoming Assignments" %>
+
+<h1>Assignments</h1>
+
+<div id="assignments">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">title</th>
+      <th scope="col">deadline</th>
+    </tr>
+    </thead>
+  <tbody>
+  <% @assignments.each do |assignment| %>
+  <tr>
+    <td><%= link_to  assignment.title, stud_course_assignment_path(assignment.course_id,assignment.id) %></td>
+    <td><%= assignment.deadline %></td>
+  </tr>
+  <% end %>
+  </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,12 @@
+<% content_for :title, "Editing course" %>
+
+<h1>Editing course</h1>
+
+<%= render "form", course: @course %>
+
+<br>
+
+<div>
+  <%= link_to "Show this course", [:teach, @course] %> |
+  <%= link_to "Back to courses", teach_courses_path %>
+</div>

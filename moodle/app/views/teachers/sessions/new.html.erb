@@ -1,0 +1,22 @@
+<div class="text-center  justify-content-center vh-100" style="margin-left: 30%;margin-top: 50px">
+  <div class="w-100" style="max-width: 400px;">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-signin") do |f| %>
+      <img class="mb-4" src="https://www.svgrepo.com/show/229758/teacher.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mb-3", placeholder: "Email" %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control mb-3", placeholder: "Password" %>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="checkbox mb-3">
+          <%= f.check_box :remember_me, class: "mr-2" %>
+          <%= f.label :remember_me, class: "mb-0" %>
+        </div>
+      <% end %>
+
+      <%= f.submit "Log in", class: "btn btn-dark btn-block rounded submit px-3 mb-3" %>
+    <% end %>
+
+    <%= render "teachers/shared/links" %>
+  </div>
+</div>

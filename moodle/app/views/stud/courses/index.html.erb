@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Courses" %>
+<h1 style="margin-left: 15px" > your Courses:</h1>
+<br>
+<div id="courses">
+  <div class="container" >
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <% @courses.each do |course| %>
+        <div class="col">
+          <div class="card" style="height: 100%; margin-left: 20px; border-bottom-color: black">
+            <%= render course %>
+            <%= button_to "unenroll from this course", unenroll_stud_courses_path(course_id: course.id ), url_for: unenroll_stud_courses_path,  method: :delete, class:"btn btn-danger" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

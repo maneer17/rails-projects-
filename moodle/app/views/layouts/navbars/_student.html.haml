@@ -1,0 +1,12 @@
+%ul.navbar-nav
+  - if current_student
+    %li.nav-item
+      =link_to "Courses",stud_courses_path, class:"nav-link"
+    %li.nav-item
+      =link_to "Upcoming assignments",upcoming_assignments_stud_courses_path, class:"nav-link"
+    %li.nav-item
+      = link_to "your progress",progress_bar_stud_courses_path, class:"nav-link"
+    %li.nav-item
+      =link_to "Enroll in new courses",select_stud_courses_path, class:"nav-link"
+    %li.nav-item
+      = link_to "Sign out", destroy_student_session_path,data: { turbo_method: :delete},  class: "nav-link"

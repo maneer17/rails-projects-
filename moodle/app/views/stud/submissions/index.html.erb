@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Submissions" %>
+
+<h1>Submissions</h1>
+
+<div id="submissions">
+  <% @submissions.each do |submission| %>
+    <%= render submission %>
+    <p>
+      <%= link_to "back to  assignment", stud_course_assignment_path(@assignment.course_id,@assignment)%>
+    </p>
+  <% end %>
+</div>
+

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @assignment %>
+
+<div>
+  <% if @is_submitted && @is_deadline_finished %>
+    <a color="red">Deadline is overdue for this assignment!</a>
+    <%= link_to "Your submission", stud_course_assignment_submission_path(@course, @assignment) %>
+    <% elsif @is_submitted %>
+    <%= link_to "Your submission", stud_course_assignment_submission_path(@course, @assignment) %>
+    <%else %>
+    <%= button_to "New submission", new_stud_course_assignment_submission_path(@course, @assignment),method: :get,class:"btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "Back to assignments", stud_course_assignments_path %>
+</div>

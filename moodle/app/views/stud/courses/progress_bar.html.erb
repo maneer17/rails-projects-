@@ -1,0 +1,30 @@
+<%
+  if @progress <= 25
+    message = "Getting started is the hardest part keep going!🥺"
+    class_v = "progress-bar bg-danger"
+  elsif  @progress <= 50
+    message = "you're almost halfway through don't give up!💪🏻"
+    class_v = "progress-bar bg-warning"
+  elsif  @progress <= 75
+    message = "You're doing amazing keep going!🤩"
+    class_v = "progress-bar bg-info"
+  elsif @progress < 90
+    message= "WOW! the finish line is getting closer you're  killing it 🔥"
+    class_v = "progress-bar bg-primary"
+    else
+      message="Congratulations you finished all of your assignments 🎉"
+    class_v = "progress-bar bg-success"
+  end
+%>
+
+<h1>Your Progress Bar</h1>
+<br>
+<div class="progress">
+  <div class="<%= class_v %>" role="progressbar" style="width: <%= @progress %>%;" aria-valuenow="<%= @progress %>"><%=@progress %>%
+  </div>
+</div>
+  <br>
+<div style="margin-left: 50px">
+  <h4 style="color: olivedrab"><%= message %></h4>
+  <h6>you have finished <%= @submitted.round %> of <%= @total.round %> assignments</h6>
+</div>

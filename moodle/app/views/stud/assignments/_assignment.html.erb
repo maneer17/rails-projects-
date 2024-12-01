@@ -1,0 +1,17 @@
+<div id="<%= dom_id assignment %>">
+  <div style="margin-left: 20px">
+    <p>
+      <strong style="font-family: cursive; font-size: x-large"><%= assignment.title %></strong>
+
+    </p>
+
+    <p style="font-family: cursive; font-size: large">
+      <%= assignment.content %>
+    </p>
+
+    <p>
+      <strong>Deadline:</strong>
+      <%= assignment.deadline.strftime("%B %d, %Y %I:%M %p")  %>
+    </p>
+  </div>
+</div>

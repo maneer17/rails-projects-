@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Submissions" %>
+
+<h2 style="background-color: lightblue ; margin-left: 30px">Submissions for <%= @assignment.title %> assignment</h2>
+
+<p style=" margin-left: 60px"><%= @count %> students submitted this assignment so far</p>
+
+<div id="submissions">
+  <table class="table table-bordered border-primary" >
+    <thead>
+    <tr >
+      <th scope="col">Student id</th>
+      <th scope="col">Student name</th>
+      <th scope="col">submission title</th>
+      <th scope="col">submission file</th>
+      <th scope="col">submitted at :</th>
+    </tr>
+    </thead>
+    <tbody>
+  <% @submissions.each do |submission| %>
+    <%= render submission %>
+  <% end %>
+    </tbody>
+  </table>
+  <%= button_to "back to  assignment", teach_course_assignment_path(@assignment.course_id,@assignment), method: :get, class:"btn btn-info" %>
+</div>
+

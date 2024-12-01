@@ -1,0 +1,15 @@
+<% content_for :title, "Courses" %>
+<%= form_with url: enroll_stud_courses_path, method: :post do  %>
+  <ul>
+    <% @courses.each do |course| %>
+    <li>
+      <%= check_box_tag "course_ids[]", course.id, false, id: "course_#{course.id}" %>
+      <%= label_tag "course name: ", course.name %>
+      <%= label_tag "teacher of course: ", Teacher.find(course.teacher_id).name %>
+    </li>
+    <% end %>
+  </ul>
+  <% if @courses != [] %>
+  <%= submit_tag "Enroll in these courses " %>
+<% end %>
+<%end  %>

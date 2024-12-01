@@ -1,0 +1,9 @@
+<div id="<%= dom_id course %>">
+  <%= render "attachment",course:course %>
+  <h5 class="card-title" style="text-align: left;margin-top: 20px;margin-left: 10px" ><%= link_to course.name,stud_course_assignments_path(course.id) %></h5>
+  <div class="card-body">
+    <p class="card-text " ><%= course.description.slice(0, 50) %>
+      <%= link_to "...show more", stud_course_path(course.id) %></p>
+    <h6 class ="card-text"><%= Teacher.find(course.teacher_id ).name%></h6>
+  </div>
+</div>

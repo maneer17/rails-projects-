@@ -1,0 +1,10 @@
+<div id="<%= dom_id submission %>">
+  <tr>
+    <td><%= submission.student_id %></td>
+    <td><%= Student.find(submission.student_id).name%></td>
+    <td><%= submission.title %></td>
+    <td><%= render "attachment", submission:submission %></td>
+    <td><%= submission.created_at.strftime("%B %d, %Y %I:%M %p")  %></td>
+  </tr>
+  <tr>
+</div>

@@ -1,0 +1,8 @@
+%ul.navbar-nav
+  - if current_teacher
+    %li.nav-item
+      = link_to "courses",teach_courses_path, class:"nav-link"
+    %li.nav-item
+      = link_to "new course",new_teach_course_path, class:"nav-link"
+    %li.nav-item
+      = link_to "Sign out", destroy_teacher_session_path,data: { turbo_method: :delete},  class: "nav-link"
