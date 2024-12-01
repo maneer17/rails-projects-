@@ -1,0 +1,32 @@
+%div{data: {controller: 'task'}}
+  = form_with(model: [:me, task]) do |form|
+    - if task.errors.any?
+      %div{:style => "color: red"}
+        %h2
+          = pluralize(task.errors.count, "error")
+          prohibited this task from being saved:
+        %ul
+          - task.errors.each do |error|
+            %li= error.full_message
+    %div
+      = form.label :date, style: "display: block"
+      = form.text_field :date, class: 'datepicker'
+    %div
+      = form.label :title, style: "display: block"
+      = form.text_field :title
+    %div
+      = form.label :content, style: "display: block"
+      = form.text_area :content
+
+    %div
+      = form.label :status, style: "display: block"
+      = form.select :status, options_for_select(Task.statuses.to_a, Task.statuses[task.status])
+
+    %div
+      = form.label :category, style: "display: block"
+      = form.select :category_id, options_for_select(Category.pluck(:title, :id), task.category_id)
+
+    %div
+      = form.collection_check_boxes :tag_ids, Tag.all, :id, :title
+    %div
+      = form.submit

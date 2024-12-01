@@ -1,0 +1,15 @@
+:ruby
+  active_devise = (current_admin || current_user)
+  navbar_class = active_devise.class == Admin ? 'bg-dark navbar-dark' : 'navbar-dark bg-primary'
+
+%nav.navbar.navbar-expand-lg{class: navbar_class}
+  %a.navbar-brand{:href => "#"} Weekly Planner
+  %span.badge.rounded-pill.bg-warning.text-dark= content_for(:login_as) || "-"
+  %ul.navbar-nav
+    - if active_devise
+      = render "layouts/navbars/#{active_devise.class.name.underscore}"
+    - else
+      %li.nav-item
+        = link_to "Sign in as admin", new_admin_session_path, class: "nav-link"
+      %li.nav-item
+        = link_to "Sign in as user", new_user_session_path, class: "nav-link"

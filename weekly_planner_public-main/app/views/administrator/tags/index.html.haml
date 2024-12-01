@@ -1,0 +1,9 @@
+%p{:style => "color: green"}= notice
+- content_for :title, "Tags"
+%h1 Tags
+#tags
+  - @tags.each do |tag|
+    = render tag
+    %p
+      = link_to "Show this tag", [:administrator, tag]
+= link_to "New tag", new_administrator_tag_path

@@ -1,0 +1,77 @@
+#hanging-icons.container.px-4.py-5
+  .row.g-4.py-5.row-cols-1.row-cols-lg-3
+    .col.d-flex.align-items-start
+      .icon-square.bg-light.text-dark.flex-shrink-0.me-3
+        %svg.bi{height: "1em", width: "1em"}
+          %use{"xlink:href" => "#toggles2"}
+      %div
+        %h2 Featured title
+        %p Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.
+        %a.btn.btn-primary{href: "#"}
+          Primary button
+    .col.d-flex.align-items-start
+      .icon-square.bg-light.text-dark.flex-shrink-0.me-3
+        %svg.bi{height: "1em", width: "1em"}
+          %use{"xlink:href" => "#cpu-fill"}
+      %div
+        %h2 Featured title
+        %p Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.
+        %a.btn.btn-primary{href: "#"}
+          Primary button
+    .col.d-flex.align-items-start
+      .icon-square.bg-light.text-dark.flex-shrink-0.me-3
+        %svg.bi{height: "1em", width: "1em"}
+          %use{"xlink:href" => "#tools"}
+      %div
+        %h2 Featured title
+        %p Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.
+        %a.btn.btn-primary{href: "#"}
+          Primary button
+.b-example-divider
+#custom-cards.container.px-4.py-5
+  .row.row-cols-1.row-cols-lg-3.align-items-stretch.g-4.py-5
+    .col
+      .card.card-cover.h-100.overflow-hidden.text-white.bg-dark.rounded-5.shadow-lg{style: "background-image: url('unsplash-photo-1.jpg');"}
+        .d-flex.flex-column.h-100.p-5.pb-3.text-white.text-shadow-1
+          %h2.pt-5.mt-5.mb-4.display-6.lh-1.fw-bold Short title, long jacket
+          %ul.d-flex.list-unstyled.mt-auto
+            %li.me-auto
+              %img.rounded-circle.border.border-white{alt: "Bootstrap", height: "32", src: "https://github.com/twbs.png", width: "32"}/
+            %li.d-flex.align-items-center.me-3
+              %svg.bi.me-2{height: "1em", width: "1em"}
+                %use{"xlink:href" => "#geo-fill"}
+              %small Earth
+            %li.d-flex.align-items-center
+              %svg.bi.me-2{height: "1em", width: "1em"}
+                %use{"xlink:href" => "#calendar3"}
+              %small 3d
+    .col
+      .card.card-cover.h-100.overflow-hidden.text-white.bg-dark.rounded-5.shadow-lg{style: "background-image: url('unsplash-photo-2.jpg');"}
+        .d-flex.flex-column.h-100.p-5.pb-3.text-white.text-shadow-1
+          %h2.pt-5.mt-5.mb-4.display-6.lh-1.fw-bold Much longer title that wraps to multiple lines
+          %ul.d-flex.list-unstyled.mt-auto
+            %li.me-auto
+              %img.rounded-circle.border.border-white{alt: "Bootstrap", height: "32", src: "https://github.com/twbs.png", width: "32"}/
+            %li.d-flex.align-items-center.me-3
+              %svg.bi.me-2{height: "1em", width: "1em"}
+                %use{"xlink:href" => "#geo-fill"}
+              %small Pakistan
+            %li.d-flex.align-items-center
+              %svg.bi.me-2{height: "1em", width: "1em"}
+                %use{"xlink:href" => "#calendar3"}
+              %small 4d
+    .col
+      .card.card-cover.h-100.overflow-hidden.text-white.bg-dark.rounded-5.shadow-lg{style: "background-image: url('unsplash-photo-3.jpg');"}
+        .d-flex.flex-column.h-100.p-5.pb-3.text-shadow-1
+          %h2.pt-5.mt-5.mb-4.display-6.lh-1.fw-bold Another longer title belongs here
+          %ul.d-flex.list-unstyled.mt-auto
+            %li.me-auto
+              %img.rounded-circle.border.border-white{alt: "Bootstrap", height: "32", src: "https://github.com/twbs.png", width: "32"}/
+            %li.d-flex.align-items-center.me-3
+              %svg.bi.me-2{height: "1em", width: "1em"}
+                %use{"xlink:href" => "#geo-fill"}
+              %small California
+            %li.d-flex.align-items-center
+              %svg.bi.me-2{height: "1em", width: "1em"}
+                %use{"xlink:href" => "#calendar3"}
+              %small 5d
