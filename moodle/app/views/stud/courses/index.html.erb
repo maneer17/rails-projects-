@@ -10,7 +10,7 @@
         <div class="col">
           <div class="card" style="height: 100%; margin-left: 20px; border-bottom-color: black">
             <%= render course %>
-            <%= button_to "unenroll from this course", unenroll_stud_courses_path(course_id: course.id ), url_for: unenroll_stud_courses_path,  method: :delete, class:"btn btn-danger" %>
+            <%= button_to "unenroll from this course", unenroll_stud_courses_path(course_id: course.id ), url_for: unenroll_stud_courses_path,  method: :delete, class:"btn btn-danger", data: { turbo_confirm: "Are you sure you want to withdraw from #{course.name} "} %>
           </div>
         </div>
       <% end %>
