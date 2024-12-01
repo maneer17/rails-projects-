@@ -1,8 +1,0 @@
-- content_for :title, "Editing tag"
-%h1 Editing tag
-= render "form", tag: @tag
-%br/
-%div
-  = link_to "Show this tag", [:administrator, @tag]
-  |
-  \#{link_to "Back to tags", administrator_tags_path}

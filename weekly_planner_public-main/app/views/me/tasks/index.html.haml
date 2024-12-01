@@ -1,9 +1,0 @@
-%p{:style => "color: green"}= notice
-- content_for :title, "Tasks"
-- content_for :login_as, "As user"
-%h1 Tasks
-= link_to "New task", new_me_task_path
-#tasks.row.row-cols-3
-  - @tasks.each do |task|
-    .col.mb-3
-      = render task

@@ -1,8 +1,0 @@
-%p{:style => "color: green"}= notice
-= render @tag
-%div
-  = link_to "Edit this tag", edit_administrator_tag_path(@tag)
-  |
-  \#{link_to "Back to tags", administrator_tags_path}
-  
-  \#{button_to "Destroy this tag", [:administrator, @tag], method: :delete}
