@@ -17,8 +17,12 @@ class Stud::CoursesController < ApplicationController
         end
         @total+=1
       end
-      end
+    end
+    begin
       @progress = ((@submitted/@total) *100).round
+    rescue FloatDomainError
+      @progress = 0
+    end
   end
   def upcoming_assignments
     @assignments =[]
