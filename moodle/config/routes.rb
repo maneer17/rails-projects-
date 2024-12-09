@@ -14,8 +14,10 @@ Rails.application.routes.draw do
       resources :assignments do
         resources :submissions, only:[:index, :show]
       end
+      resources :posts
     end
   end
+
 
   namespace :stud do
     resources :courses, only: [ :index, :show ] do
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
         get :select
         get :upcoming_assignments
         get :progress_bar
+        get :fetch_posts
         post :enroll
         delete :unenroll
       end
@@ -30,7 +33,8 @@ Rails.application.routes.draw do
         resources :submissions, only: [ :index, :show, :new, :create ]
       end
       end
-  end
+
+end
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,0 +1,12 @@
+<% content_for :title, "Editing post" %>
+
+<h1>Editing post</h1>
+
+<%= render "form", post: [:teach, @post] %>
+
+<br>
+
+<div>
+  <%= link_to "Show this post", [:teach,@course,@post] %> |
+  <%= link_to "Back to posts", teach_course_posts_path %>
+</div>

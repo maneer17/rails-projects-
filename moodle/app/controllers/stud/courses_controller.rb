@@ -1,6 +1,6 @@
 # app/controllers/teach/courses_controller.rb
 class Stud::CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show ]
+  before_action :set_course, only: %i[ show]
 
   # GET /teach/courses or /teach/courses.json
   def index
@@ -36,6 +36,16 @@ class Stud::CoursesController < ApplicationController
       end
     end
   end
+  def fetch_posts
+    student_courses = current_student.courses
+    courses_with_posts = student_courses.includes(:posts)
+    all_posts = []
+    courses_with_posts.each do |course|
+      all_posts.concat(course.posts)
+    end
+    @posts = all_posts
+  end
+
   def show
 
   end

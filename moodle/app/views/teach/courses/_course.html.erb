@@ -5,6 +5,7 @@
     <p class="card-text " ><%= course.description.slice(0, 50) %>
       <%= link_to "...show more", teach_course_path(course.id) %>
     </p>
+    <a href="<%=teach_course_posts_path(course.id) %>"  class="btn btn-primary">course posts</a>
     <a href="<%=teach_course_assignments_path(course.id) %>"  class="btn btn-primary">course assignments</a>
   </div>
 

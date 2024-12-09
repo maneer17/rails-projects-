@@ -1,0 +1,16 @@
+<p class="notice"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<h1>Posts</h1>
+
+<div class="posts-container " style="margin-left: 20px;" >
+  <% @posts.each do |post| %>
+    <div class="post" >
+      <h2 class="post-title" style="font-family: fantasy"><%= post.title %></h2>
+      <p class="post-body" style="font-family: fantasy"><%= post.body %></p>
+    </div>
+    <hr>
+  <% end %>
+</div>
+
